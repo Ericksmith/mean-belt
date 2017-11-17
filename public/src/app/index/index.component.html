@@ -1,0 +1,19 @@
+<h1>Hi {{user.username}}</h1>
+<p><a href="/logout">Logout</a></p>
+<p><a [routerLink]="['new-question']">Add a Question</a></p>
+
+<p>Search: <input type="text" (keyup)="search()" name="searchString"  [(ngModel)]="searchString" ></p>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let question of questions">
+    <td>{{question.question}}</td>
+    <td>{{question.answers.length}}</td>
+    <td><a [routerLink]="['/show', question._id]">Show</a>  <a [routerLink]="['/answer', question._id]">Answer</a></td>
+  </tr>
+
+</table>

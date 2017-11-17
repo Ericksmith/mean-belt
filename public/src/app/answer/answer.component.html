@@ -1,0 +1,19 @@
+<p><a [routerLink]="['/']">Home</a> | <a [routerLink]="['/show', question_id]"></a></p>
+<p><a href="/logout">Logout</a></p>
+<div id='content'>
+<div id="wrapper">
+<h3>{{question.question}}</h3>
+<h4 *ngIf="question.discription != '' " >{{question.discription}}</h4>
+
+<form #answerForm="ngForm" (submit)="newAnswer()">
+
+   <p> <label for="answer">Your Answer: </label></p>
+    <textarea cols="30" rows="10" name="answer" required minlength="5" [(ngModel)]="userAnswer.answer" #answer="ngModel"
+    ></textarea>
+    <p><label for="details">Supporting Details(optional)</label></p>
+    <textarea name="details" cols="30" rows="10" [(ngModel)]="userAnswer.details" #details="ngModel"></textarea>
+    <a [routerLink]="['/']"><button>Cancel</button></a> <input type="submit" value="Submit" [disabled]="answerForm.invalid">
+
+</form>
+</div>
+</div>

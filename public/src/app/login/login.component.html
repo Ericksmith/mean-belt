@@ -1,0 +1,11 @@
+<h1>Q and A</h1>
+
+<form #userForm="ngForm" (submit)="login()">
+<p>Name: <input type="text" 
+  name="username"
+  required
+  minlength="2"
+  [(ngModel)]="user.username"
+  #username="ngModel"></p>
+<input type="submit" value="Enter" [disabled]="userForm.invalid">
+</form>

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var path = require('path');
 
 
-// mongoose.connect('mongodb://localhost/bicycle-market');
+mongoose.connect('mongodb://localhost/questions');
 mongoose.Promise = global.Promise;
 var fs = require('fs');
 

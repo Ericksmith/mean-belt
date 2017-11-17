@@ -1,0 +1,15 @@
+<p><a [routerLink]="['/']">Home</a> | <a [routerLink]="['/answer', question._id]">Answer the question</a></p>
+<p><a href="/logout">Logout</a></p>
+
+<h3>{{question.question}}</h3>
+<h4 *ngIf="question.discription != '' " >{{question.discription}}</h4>
+
+<hr>
+<div id="answer" *ngFor="let answer of question.answers" >
+  <p>{{answer._user.username}}</p>
+  <p>{{answer.answer}}</p>
+  <p *ngIf="answer.details != '' " >{{answer.details}}</p>
+  <p> {{answer.likes}} <button (click)="addLike(answer._id)">Like!</button></p>
+  <hr>
+
+</div>

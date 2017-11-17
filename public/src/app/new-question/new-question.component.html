@@ -1,0 +1,13 @@
+<p><a [routerLink]="['/']">Home</a></p>
+<p><a href="/logout">Logout</a></p>
+
+<h1>New Question</h1>
+
+<form #questionForm="ngForm" (submit)="newQuestion()">
+  <p><label for="question">Question</label></p> <p>
+<textarea cols="30" rows="10" name="question" required minlength="10" [(ngModel)]="userQuestion.question" #question="ngModel"
+></textarea></p>
+<p><label for="discription">Discription(optional)</label></p><p>
+<textarea name="description" cols="30" rows="10" [(ngModel)]="userQuestion.discription" #discription="ngModel"></textarea>
+<a [routerLink]="['/']"><button>Cancel</button></a> <input type="submit" value="Submit" [disabled]="questionForm.invalid">
+</p></form>
